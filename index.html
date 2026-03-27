@@ -1,45 +1,228 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Meadowlark HR</title>
   <style>
+    :root {
+      --bg: #f8f6f1;
+      --card: #fffdf9;
+      --text: #2f3a32;
+      --muted: #6f7a72;
+      --accent: #7d9b87;
+      --accent-dark: #5f7967;
+      --border: #e7e1d7;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      max-width: 700px;
-      margin: 60px auto;
-      line-height: 1.6;
-      color: #333;
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
     }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .hero {
+      padding: 72px 0 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 40px;
+    }
+
+    .eyebrow {
+      font-size: 0.9rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 14px;
+    }
+
     h1 {
-      font-size: 32px;
+      font-size: clamp(2.3rem, 6vw, 4rem);
+      line-height: 1.1;
+      margin: 0 0 18px;
+      font-weight: normal;
     }
+
+    .hero p {
+      max-width: 680px;
+      font-size: 1.15rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .button-row {
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--accent);
+      color: white;
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 999px;
+      font-size: 0.98rem;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: var(--accent-dark);
+    }
+
+    section {
+      margin-top: 28px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px;
+      margin-top: 20px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+    }
+
     h2 {
-      margin-top: 40px;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-weight: normal;
+    }
+
+    .services {
+      display: grid;
+      gap: 16px;
+    }
+
+    .service-item {
+      padding: 18px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .service-item:first-child {
+      border-top: none;
+      padding-top: 0;
+    }
+
+    .service-item h3 {
+      margin: 0 0 6px;
+      font-size: 1.08rem;
+      font-weight: normal;
+    }
+
+    .service-item p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .about-text,
+    .contact-text {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .contact-link {
+      color: var(--accent-dark);
+      text-decoration: none;
+    }
+
+    .contact-link:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      margin-top: 48px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      .container {
+        padding: 24px 16px 56px;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .card {
+        padding: 22px;
+      }
     }
   </style>
 </head>
-
 <body>
+  <div class="container">
+    <header class="hero">
+      <div class="eyebrow">Meadowlark HR</div>
+      <h1>Practical HR support for growing organizations.</h1>
+      <p>
+        Clear, thoughtful HR infrastructure for teams that need organized people
+        systems without unnecessary complexity.
+      </p>
+      <div class="button-row">
+        <a class="button" href="mailto:youremail@example.com">Get in touch</a>
+      </div>
+    </header>
 
-<h1>Meadowlark HR</h1>
-<p>Practical HR support for growing organizations.</p>
+    <section class="card">
+      <h2>Services</h2>
+      <div class="services">
+        <div class="service-item">
+          <h3>Employee handbooks</h3>
+          <p>
+            Structured, easy-to-use handbooks tailored for small and growing organizations.
+          </p>
+        </div>
 
-<h2>Services</h2>
-<ul>
-  <li>Employee handbooks</li>
-  <li>Benefits communication</li>
-  <li>HR process setup & cleanup</li>
-</ul>
+        <div class="service-item">
+          <h3>Benefits communication</h3>
+          <p>
+            Clear employee-facing materials that make benefits easier to understand.
+          </p>
+        </div>
 
-<h2>About</h2>
-<p>
-Experienced HR professional specializing in clear, structured people systems that help organizations operate smoothly.
-</p>
+        <div class="service-item">
+          <h3>HR process setup and cleanup</h3>
+          <p>
+            Support with onboarding, offboarding, documentation, and practical workflow improvements.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<h2>Contact</h2>
-<p>
-Email: meadowlarkhr@gmail.com
-</p>
+    <section class="card">
+      <h2>About</h2>
+      <p class="about-text">
+        Meadowlark HR offers practical, organized support for foundational HR work.
+        The focus is on clarity, usability, and building systems that help organizations
+        operate more smoothly.
+      </p>
+    </section>
 
+    <section class="card">
+      <h2>Contact</h2>
+      <p class="contact-text">
+        Email:
+        <a class="contact-link" href="mailto:youremail@example.com">youremail@example.com</a>
+      </p>
+    </section>
+
+    <footer>
+      © 2026 Meadowlark HR
+    </footer>
+  </div>
 </body>
 </html>
